@@ -160,17 +160,17 @@ int WINAPI newsend(SOCKET s, unsigned char* buf, int len, int flags)
 		for (int i = 0; i < len; i++)
 		{
 			decryptedpacket[i] = buf[i];
-			std::cout << std::hex << int(decryptedpacket[i]) << " ";
+			//std::cout << std::hex << int(decryptedpacket[i]) << " ";
 
 		}
-		std::cout << "Encryption Begin" << std::endl;
-		
+		std::cout << std::endl << "Encryption Begin" << std::endl;
+
 		encryptor(decryptedpacket);
 		len = 67;
 		for (int i = 0; i < 67; i++)
 		{
 			buf[i] = encryptedpacket[i];
-			std::cout << std::hex << int(buf[i]) << " ";
+			//std::cout << std::hex << int(buf[i]) << " ";
 		}
 	}
 
